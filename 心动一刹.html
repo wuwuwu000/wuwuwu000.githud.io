@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>心动一刹</title>
+<style>
+ html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background: rgb(237, 235, 235);
+  font-family: 'Bangers', cursive;
+}
+span{
+color: rgb(255, 167, 181);
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 95vh;
+font-size: 100px;
+font-family:  'Bangers', cursive;
+}
+.fade-out {
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+    
+    .fade-out.fade {
+      opacity: 0;
+    }
+
+</style>
+</head>
+
+<body>
+
+ <!-- <input type="text" readonly="true" value="5" id="time"> -->
+ <span id="span" class="a" >5</span>
+
+</body>
+<script>
+	
+	var time =5;
+	var box = window.setInterval(tt,1000)
+	function tt(){
+		time--;
+		document.getElementById('span').innerHTML = time ; 
+		// 在合适的时机添加 fade 类名以触发淡出效果
+		document.querySelector('.fade-out').classList.add('fade');
+		if(time == 0){
+           // 等待淡出效果完成后，跳转到第二个网页
+		setTimeout(function() {
+		window.location.href = '/3d展示/3d图片.html';
+		}, 5000); // 1000毫秒（1秒）后跳转
+		}
+	}
+
+	
+    
+    // 等待淡出效果完成后，跳转到第二个网页
+    setTimeout(function() {
+      window.location.href = '/3d展示/3d图片.html';
+    }, 5000); // 1000毫秒（1秒）后跳转
+
+</script>
+</html>

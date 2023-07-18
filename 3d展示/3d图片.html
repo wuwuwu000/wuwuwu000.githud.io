@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3d动态图片</title>
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+<style>
+    .box1{
+		
+        width: 100%;
+        height: 880px;
+        background: url(img/y01.png) no-repeat; 
+    }
+	.fade-in {
+      opacity: 0;
+      transition: opacity 5s ease-in-out;
+    }
+    
+    .fade-in.show {
+      opacity: 1;
+    }
+	
+</style>
+</head>
+<body>
+<div class="fade-in">
+<div class="box1">
+<div class="box">
+	<ul class="minbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ol class="maxbox">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ol>
+</div>
+</div>
+
+	<audio autoplay="autoplay" preload="auto"  loop="loop" id="audios">
+	  <source src="/3d展示/time to love.mp3">
+	</audio>
+	
+	<script type="text/javascript">
+		 // 自动播放背景音乐
+		 document.addEventListener('click', function() {
+    document.getElementById('audios').play()
+});
+	   // 在页面加载完成后执行淡入效果
+	   window.onload = function() {
+		 // 获取页面元素
+		 var fadeElement = document.querySelector('.fade-in');
+		 
+		 // 添加 show 类名以触发淡入效果
+		 fadeElement.classList.add('show');
+		 setTimeout(function() {
+		   window.location.href = '/完整版.html';
+		 }, 15080); // 1000毫秒（1秒）后跳转
+	   };
+   
+	   // // 设置计时器，5秒后跳转页面
+	   // var countdown = 5;
+	   // var timer = setInterval(function() {
+	   // countdown--;
+	   // document.getElementById("btn_countdown").innerHTML = countdown + "秒后跳转页面";
+	   // if (countdown<= 0) {
+	   // window.location.href = "http://127.0.0.1:5500/%E5%AE%8C%E6%95%B4%E7%89%88.html";
+	   // clearInterval(timer);
+	   // }
+	   // }, 1000);
+	   
+	   </script>
+</body>
+
+</html>
